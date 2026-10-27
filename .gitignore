@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Artefactos del modelo (se generan con: uv run entrenar)
+models/*
+
+# Pruebas y entorno local
+.pytest_cache/
+.env
