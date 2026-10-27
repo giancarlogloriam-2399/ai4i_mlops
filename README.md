@@ -8,6 +8,16 @@ datos → entrenamiento → API → interfaz web → contenedor → CI/CD y nube
 
 La estructura sigue el proyecto de referencia del curso ([iris_mlops](https://github.com/marcell-llerena/iris_mlops)), adaptado a un problema distinto: anticipar fallas en máquinas industriales.
 
+## Demo en línea
+
+| Servicio | URL |
+|---|---|
+| Interfaz web (Gradio) | https://ai4i-ui.onrender.com |
+| API (FastAPI) | https://ai4i-mlops.onrender.com |
+| Documentación de la API | https://ai4i-mlops.onrender.com/docs |
+
+Ambos servicios corren en el plan gratuito de Render y se duermen tras 15 minutos sin uso. Si llevan un rato inactivos, la primera petición puede tardar alrededor de un minuto.
+
 ## El problema
 
 En una planta, una falla no prevista detiene la línea y obliga a reparar de urgencia. El **planner de mantenimiento** necesita saber qué máquinas tienen más riesgo para programar una intervención antes de que se rompan.
