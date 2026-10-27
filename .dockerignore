@@ -1,0 +1,16 @@
+.venv/
+models/
+
+.git/
+.github/
+__pycache__/
+*.py[oc]
+.pytest_cache/
+
+tests/
+.env
+.DS_Store
+
+Dockerfile
+compose.yaml
+.dockerignore

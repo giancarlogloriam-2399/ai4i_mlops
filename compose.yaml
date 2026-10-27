@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    image: ai4i-mlops
+    ports:
+      - "8000:8000"
+
+  gradio:
+    image: ai4i-mlops
+    command: ["python", "app/gradio_app.py"]
+    environment:
+      API_URL: http://api:8000
+      GRADIO_SERVER_NAME: 0.0.0.0
+    ports:
+      - "7860:7860"
+    depends_on:
+      - api
