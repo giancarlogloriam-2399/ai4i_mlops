@@ -71,8 +71,8 @@ RANDOM_STATE = 42
 # Hiperparámetros
 MODEL_PARAMS = {
     "n_estimators": 200,
-    "max_depth": 10,
-    "min_samples_leaf": 2,
+    "max_depth": 15,
+    "min_samples_leaf": 3,
     "class_weight": "balanced",
     "random_state": RANDOM_STATE,
 }
@@ -85,5 +85,5 @@ RISK_MEDIUM = 0.3   # desde aquí el riesgo es "medio"
 RISK_HIGH = 0.6     # desde aquí el riesgo es "alto"
 
 # Calidad mínima aceptable (clase 1 = falla)
-MIN_F1 = 0.0
-MIN_RECALL = 0.0
+MIN_F1 = 0.59
+MIN_RECALL = 0.77
