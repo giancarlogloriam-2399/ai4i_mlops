@@ -272,6 +272,26 @@ Estos pasos se hacen a mano una sola vez.
 
 En el plan gratuito de Render los servicios se duermen tras un rato sin uso. La primera petición puede tardar cerca de un minuto, y por eso la interfaz espera hasta 60 segundos a la API.
 
+## Uso de herramientas de IA
+
+Desarrollé este proyecto con Claude (Anthropic) como asistente de programación. Mi rol fue el de diseño y supervisión técnica; el de Claude, la implementación bajo mis especificaciones. Por eso los commits lo muestran como coautor.
+
+**Diseño y dirección del proyecto (a mi cargo):**
+
+- Definí el problema, el usuario (el planner de mantenimiento) y el dataset AI4I 2020.
+- Esquematicé la arquitectura completa, de los datos al despliegue: la estructura del repositorio, la responsabilidad de cada archivo y el orden de construcción en siete fases.
+- Fijé los criterios técnicos: eliminar las columnas de tipo de falla por leakage, evaluar con F1 y recall de la clase falla en lugar de accuracy, exigir una puerta de calidad que bloquee modelos malos, cargar el modelo una sola vez y hacer que la interfaz consuma la API sin tocar el modelo.
+- Definí los criterios de aceptación de cada etapa y validé los resultados antes de avanzar.
+- Configuré y verifiqué el despliegue: Docker en local, los servicios en Render y los secrets en GitHub.
+
+**Implementación (con apoyo de Claude):**
+
+- Escritura del código y de la documentación según esa especificación.
+- Ejecución de pruebas y verificaciones en cada fase.
+- Propuestas de detalle que revisé y aprobé, como la configuración final de hiperparámetros (elegida con validación cruzada sobre train) y los cortes de los niveles de riesgo.
+
+Todas las decisiones del proyecto pasaron por mi revisión, y puedo justificar cada una en la sustentación.
+
 ## Limitaciones
 
 - **Datos sintéticos.** AI4I 2020 es una simulación. Las fallas siguen reglas bastante limpias (por ejemplo, la falla por calor depende de la diferencia de temperaturas y de la velocidad), algo que con sensores reales no pasa. Las métricas no se trasladan tal cual a una planta real.
